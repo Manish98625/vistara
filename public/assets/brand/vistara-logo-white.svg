@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <defs>
+    <style>
+      .cls-white { fill: #FFFFFF; }
+      .cls-text-main { font-family: 'Arial Black', sans-serif; font-weight: 900; fill: #FFFFFF; }
+      .cls-text-sub { font-family: 'Arial', sans-serif; font-weight: 700; fill: #FFFFFF; letter-spacing: 2px; }
+      .cls-tagline { font-family: 'Georgia', serif; font-style: italic; fill: #FFFFFF; opacity: 0.8; }
+    </style>
+  </defs>
+
+  <g transform="translate(50, 40)">
+    <g id="Icon">
+      <path class="cls-white" d="M120 180 C120 220 80 220 40 200 C10 180 0 140 0 100 C0 44.8 44.8 0 100 0 C110 0 120 2 130 5 L125 15 C118 12 110 10 100 10 C50.3 10 10 50.3 10 100 C10 135 20 165 45 185 C75 205 110 200 120 170 Z" />
+      <path class="cls-white" d="M15 65 L45 45 L75 65 L45 85 Z" />
+      <path class="cls-white" d="M75 65 L75 75 C75 75 45 95 15 75 L15 65" opacity="0.8" />
+      <path class="cls-white" d="M65 110 C65 102 72 95 80 95 C88 95 95 102 95 110 C95 118 88 125 80 125 C72 125 65 118 65 110 Z" />
+      <path class="cls-white" d="M50 170 L70 135 C70 135 80 130 90 135 L110 170 L95 175 L80 150 L65 175 Z" />
+      <g transform="translate(100, 130)">
+        <path class="cls-white" d="M0 0 A50 50 0 0 1 50 50 L0 50 Z" opacity="0.6" />
+      </g>
+      <path class="cls-white" d="M140 50 L145 40 L150 50 L160 55 L150 60 L145 70 L140 60 L130 55 Z" />
+      <path class="cls-white" d="M20 30 L23 25 L26 30 L31 33 L26 36 L23 41 L20 36 L15 33 Z" />
+    </g>
+
+    <g transform="translate(220, 110)">
+      <text x="0" y="0" class="cls-text-main" font-size="85">VISTARA</text>
+      <text x="5" y="45" class="cls-text-sub" font-size="28">EDUCATION PVT. LTD.</text>
+      <path d="M0 60 L280 60" stroke="#FFFFFF" stroke-width="3" />
+      <text x="5" y="90" class="cls-tagline" font-size="22">Guiding You Towards a Brighter Future</text>
+    </g>
+  </g>
+</svg>

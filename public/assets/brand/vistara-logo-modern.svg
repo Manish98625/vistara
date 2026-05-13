@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Define Colors -->
+  <defs>
+    <style>
+      .cls-red { fill: #A50000; }
+      .cls-dark { fill: #4B367C; }
+      .cls-accent { fill: #8B004B; }
+      .cls-white { fill: #FFFFFF; }
+      .cls-text { font-family: 'Playfair Display', serif; font-weight: 700; fill: #A50000; }
+    </style>
+  </defs>
+
+  <!-- Modern Education Logo -->
+  <g transform="translate(50, 80)">
+    <!-- Globe/Circle Background -->
+    <g id="Globe">
+      <circle class="cls-red" cx="50" cy="50" r="45" opacity="0.1" />
+      <circle class="cls-red" cx="50" cy="50" r="35" opacity="0.2" />
+      
+      <!-- Globe Lines -->
+      <path class="cls-red" d="M15 50 C15 50 85 50 85 50" stroke-width="1.5" opacity="0.4" />
+      <path class="cls-red" d="M50 15 C50 15 50 85 50 85" stroke-width="1.5" opacity="0.4" />
+      <path class="cls-red" d="M25 25 C25 25 75 25 75 25" stroke-width="1" opacity="0.3" />
+      <path class="cls-red" d="M25 75 C25 75 75 25 75 25" stroke-width="1" opacity="0.3" />
+      
+      <!-- Student Icons -->
+      <circle class="cls-accent" cx="50" cy="50" r="8" fill="white" />
+      <path class="cls-white" d="M50 42 L50 58 M42 50 L58 50" stroke-width="2" />
+    </g>
+
+    <!-- Company Name -->
+    <g transform="translate(120, 35)">
+      <text x="0" y="0" class="cls-text" font-size="52">VISTARA</text>
+      <text x="0" y="25" class="cls-text" font-size="14" font-weight="400">EDUCATION CONSULTANCY</text>
+      <path d="M0 32 L220 32" stroke="#A50000" stroke-width="2" opacity="0.3" />
+      <text x="0" y="50" class="cls-text" font-size="12" font-weight="400" opacity="0.8">PVT. LTD.</text>
+      <text x="0" y="65" class="cls-text" font-size="10" font-weight="400" opacity="0.7">ESTABLISHED 2014</text>
+    </g>
+  </g>
+</svg>

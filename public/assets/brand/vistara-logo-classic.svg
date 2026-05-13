@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Define Colors -->
+  <defs>
+    <style>
+      .cls-red { fill: #A50000; }
+      .cls-dark { fill: #4B367C; }
+      .cls-white { fill: #FFFFFF; }
+      .cls-text { font-family: 'Arial', sans-serif; font-weight: bold; fill: #A50000; }
+    </style>
+  </defs>
+
+  <!-- Classic Education Logo -->
+  <g transform="translate(50, 80)">
+    <!-- Shield/Badge Shape -->
+    <g id="Shield">
+      <path class="cls-red" d="M20 20 L80 20 L80 60 C80 80 60 90 40 90 C40 90 20 80 20 20 C20 30 30 40 20 50 L20 20 Z" opacity="0.9" />
+      <path class="cls-red" d="M20 20 L80 20 L80 60 L100 70 L100 30 L80 20" opacity="0.7" />
+      
+      <!-- Graduation Cap Inside -->
+      <path class="cls-white" d="M35 45 L65 45 L65 55 L35 55 Z" />
+      <path class="cls-white" d="M65 45 L65 50 C65 50 55 52 50 52 L35 52 L35 45" opacity="0.8" />
+      
+      <!-- Book/Pages -->
+      <path class="cls-white" d="M40 60 L60 60 L60 70 L40 70 Z" opacity="0.6" />
+      <path class="cls-white" d="M45 65 L55 65" stroke="white" stroke-width="2" />
+    </g>
+
+    <!-- Company Name -->
+    <g transform="translate(130, 35)">
+      <text x="0" y="0" class="cls-text" font-size="48">VISTARA</text>
+      <text x="0" y="25" class="cls-text" font-size="16" font-weight="normal">EDUCATION CONSULTANCY</text>
+      <path d="M0 35 L200 35" stroke="#A50000" stroke-width="2" />
+      <text x="0" y="50" class="cls-text" font-size="12" font-weight="normal" opacity="0.8">PVT. LTD.</text>
+    </g>
+  </g>
+</svg>

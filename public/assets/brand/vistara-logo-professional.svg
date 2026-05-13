@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Define Colors -->
+  <defs>
+    <style>
+      .cls-red { fill: #A50000; }
+      .cls-dark { fill: #4B367C; }
+      .cls-white { fill: #FFFFFF; }
+      .cls-text { font-family: 'Arial Black', sans-serif; font-weight: 900; fill: #A50000; }
+      .cls-subtext { font-family: 'Arial', sans-serif; font-weight: 600; fill: #4B367C; }
+    </style>
+  </defs>
+
+  <!-- Professional Education Logo -->
+  <g transform="translate(50, 80)">
+    <!-- Diamond/Badge Shape -->
+    <g id="Badge">
+      <path class="cls-red" d="M50 10 L90 50 L50 90 L10 50 Z" opacity="0.9" />
+      <path class="cls-dark" d="M50 10 L90 50 L50 90 L10 50 Z" opacity="0.7" transform="scale(0.8)" />
+      
+      <!-- Inner Elements -->
+      <circle class="cls-white" cx="50" cy="50" r="25" opacity="0.3" />
+      <path class="cls-white" d="M50 30 L50 70 M30 50 L70 50" stroke-width="2" opacity="0.5" />
+      
+      <!-- Center Star -->
+      <path class="cls-white" d="M50 45 L52 48 L55 50 L52 52 L50 55 L48 52 L45 50 L50 45 Z" />
+    </g>
+
+    <!-- Company Name -->
+    <g transform="translate(120, 35)">
+      <text x="0" y="0" class="cls-text" font-size="56">VISTARA</text>
+      <text x="0" y="25" class="cls-subtext" font-size="18">EDUCATION CONSULTANCY</text>
+      <path d="M0 35 L240 35" stroke="#A50000" stroke-width="2" opacity="0.3" />
+      <text x="0" y="55" class="cls-subtext" font-size="12" font-weight="400">PVT. LTD.</text>
+      <text x="0" y="70" class="cls-subtext" font-size="10" font-weight="400" opacity="0.8">• GOVERNMENT REGISTERED • ISO CERTIFIED</text>
+    </g>
+  </g>
+</svg>

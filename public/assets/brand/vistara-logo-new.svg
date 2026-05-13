@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Define Colors -->
+  <defs>
+    <style>
+      .cls-red { fill: #A50000; }
+      .cls-purple { fill: #4B367C; }
+      .cls-gold { fill: #D4AF37; }
+      .cls-white { fill: #FFFFFF; }
+      .cls-text-main { font-family: 'Playfair Display', serif; font-weight: 700; fill: #A50000; }
+      .cls-text-sub { font-family: 'Poppins', sans-serif; font-weight: 500; fill: #4B367C; letter-spacing: 1px; }
+      .cls-tagline { font-family: 'Poppins', sans-serif; font-weight: 300; fill: #666666; }
+    </style>
+  </defs>
+
+  <!-- Logo Group -->
+  <g transform="translate(50, 40)">
+    <!-- Icon -->
+    <g id="Icon">
+      <!-- Red Globe/Education Symbol -->
+      <circle class="cls-red" cx="60" cy="80" r="45" opacity="0.1" />
+      <path class="cls-red" d="M60 50 C60 65 50 75 40 80 C30 75 20 65 20 50 C20 35 35 25 50 25 C65 25 80 35 80 50 C80 65 75 75 70 60 Z" />
+      
+      <!-- Graduation Cap -->
+      <path class="cls-red" d="M40 70 L60 60 L80 70 L60 90 Z" />
+      <path class="cls-red" d="M60 70 L60 80 C60 80 50 90 30 80 L40 70" opacity="0.8" />
+      
+      <!-- Student Figure -->
+      <path class="cls-purple" d="M70 100 C70 95 75 85 80 85 C85 85 90 95 90 105 C95 115 85 120 75 120 C65 120 60 115 60 105 Z" />
+      
+      <!-- Achievement Star -->
+      <path class="cls-gold" d="M100 60 L105 55 L110 60 L115 65 L110 70 L105 75 L95 70 L90 65 L100 60 Z" opacity="0.9" />
+    </g>
+
+    <!-- Text -->
+    <g transform="translate(200, 100)">
+      <text x="0" y="0" class="cls-text-main" font-size="72">VISTARA</text>
+      <text x="5" y="35" class="cls-text-sub" font-size="24">EDUCATION PVT. LTD.</text>
+      <path d="M0 50 L300 50" stroke="#A50000" stroke-width="2" opacity="0.3" />
+      <text x="5" y="70" class="cls-tagline" font-size="18">Guiding Dreams, Building Futures</text>
+    </g>
+  </g>
+</svg>

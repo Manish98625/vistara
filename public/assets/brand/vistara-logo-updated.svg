@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none">
+  <!-- Define Colors -->
+  <defs>
+    <style>
+      .cls-red { fill: #A50000; }
+      .cls-text { font-family: 'Playfair Display', serif; font-weight: 700; fill: #A50000; }
+    </style>
+  </defs>
+
+  <!-- Minimal Logo -->
+  <g transform="translate(50, 100)">
+    <!-- Simple Icon -->
+    <g id="Icon">
+      <circle class="cls-red" cx="40" cy="50" r="35" opacity="0.15" />
+      <path class="cls-red" d="M40 30 C40 40 30 50 20 60 C10 55 0 40 0 60 C0 30 20 20 40 20 C60 20 80 30 80 60 C80 50 60 30 40 30 Z" />
+      <path class="cls-red" d="M25 65 L40 55 L55 65 L40 85 Z" />
+    </g>
+
+    <!-- Text Only -->
+    <g transform="translate(120, 50)">
+      <text x="0" y="0" class="cls-text" font-size="64">VISTARA</text>
+      <text x="5" y="30" class="cls-text" font-size="20" font-weight="400">EDUCATION</text>
+    </g>
+  </g>
+</svg>
