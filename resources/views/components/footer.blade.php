@@ -21,11 +21,14 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="{{ route('service.show', 'counseling') }}">Counseling</a></li>
-                    <li><a href="{{ route('service.show', 'visa') }}">Visa Processing</a></li>
-                    <li><a href="{{ route('service.show', 'documentation') }}">Documentation</a></li>
-                    <li><a href="{{ route('service.show', 'test-preparation') }}">Test Preparation</a></li>
-                    <li><a href="{{ route('service.show', 'scholarship') }}">Scholarship Guidance</a></li>
+                    @php
+                        $footerServices = \App\Models\Services::orderBy('display_order', 'ASC')->take(5)->get();
+                    @endphp
+                    @forelse($footerServices as $service)
+                        <li><a href="{{ $service->id == 2 ? route('service.test-preparation') : route('service.show', $service->id) }}">{{ $service->title }}</a></li>
+                    @empty
+                        <li><a href="{{ route('services') }}">View All Services</a></li>
+                    @endforelse
                 </ul>
             </div>
 
@@ -33,11 +36,14 @@
             <div class="footer-col">
                 <h4>Courses</h4>
                 <ul>
-                    <li><a href="{{ route('course.show', 'it') }}">IT Courses</a></li>
-                    <li><a href="{{ route('course.show', 'business') }}">Business Studies</a></li>
-                    <li><a href="{{ route('course.show', 'nursing') }}">Nursing</a></li>
-                    <li><a href="{{ route('course.show', 'engineering') }}">Engineering</a></li>
-                    <li><a href="{{ route('course.show', 'hospitality') }}">Hospitality</a></li>
+                    @php
+                        $footerCourses = \App\Models\Courses::orderBy('display_order', 'ASC')->take(5)->get();
+                    @endphp
+                    @forelse($footerCourses as $course)
+                        <li><a href="{{ route('course.show', $course->id) }}">{{ $course->title }}</a></li>
+                    @empty
+                        <li><a href="{{ route('courses') }}">View All Courses</a></li>
+                    @endforelse
                 </ul>
             </div>
 
@@ -45,10 +51,14 @@
             <div class="footer-col">
                 <h4>Study Destinations</h4>
                 <ul>
-                    <li><a href="{{ route('study.show', 'australia') }}">Australia</a></li>
-                    <li><a href="{{ route('study.show', 'uk') }}">UK</a></li>
-                    <li><a href="{{ route('study.show', 'usa') }}">USA</a></li>
-                    <li><a href="{{ route('study.show', 'canada') }}">Canada</a></li>
+                    @php
+                        $footerStudyAbroad = \App\Models\StudyAbroad::take(5)->get();
+                    @endphp
+                    @forelse($footerStudyAbroad as $study)
+                        <li><a href="{{ route('study.show', $study->id) }}">{{ $study->title }}</a></li>
+                    @empty
+                        <li><a href="{{ route('study-abroad') }}">View All Destinations</a></li>
+                    @endforelse
                 </ul>
             </div>
 
@@ -60,10 +70,14 @@
                 <p><i class="fas fa-envelope"></i> info@vistara.edu.np</p>
 
                 <h4 style="margin-top: 30px;">Newsletter</h4>
-                <form class="newsletter-form mt-20">
+                <p class="newsletter-text">Get updates about study abroad opportunities, courses, and scholarship news.</p>
+                @if (session('newsletter_success'))
+                    <div class="newsletter-alert">{{ session('newsletter_success') }}</div>
+                @endif
+                <form class="newsletter-form mt-20" action="{{ route('newsletter.store') }}" method="POST">
                     @csrf
                     <input type="email" name="email" placeholder="Your Email Address" required>
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe to newsletter"><i class="fas fa-paper-plane"></i></button>
                 </form>
 
                 <div class="social-links" style="margin-top: 25px;">
@@ -83,3 +97,4 @@
         </div>
     </div>
 </footer>
+

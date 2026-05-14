@@ -22,6 +22,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'study_destination',
+        'education_level',
+        'field_of_study',
+        'profile_image',
+        'role',
         'password',
     ];
 
@@ -40,11 +46,21 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
+    protected function casts()
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function getProfileImageUrlAttribute()
+    {
+        return $this->profile_image ? asset('storage/' . $this->profile_image) : asset('assets/brand/vistara-logo-main.svg');
     }
 }

@@ -4,7 +4,7 @@
 @section('meta_description',
     'Learn about Vistara Education Pvt. Ltd., your trusted partner for overseas education with
     12+ years of experience.')
-
+@section('canonical', url()->current())
 @section('content')
     <section class="section page-header-padding">
         <div class="container">

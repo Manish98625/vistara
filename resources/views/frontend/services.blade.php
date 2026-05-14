@@ -4,7 +4,7 @@
 @section('meta_description',
     'Explore our comprehensive range of educational services designed to support your journey
     towards overseas study. We offer counseling, visa guidance, test preparation, and more.')
-
+@section('canonical', url()->current())
 @section('content')
 
     <!-- Services Header Section -->

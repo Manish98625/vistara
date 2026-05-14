@@ -46,17 +46,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        schema::create('contact_us', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('address')->nullable();
-            $table->string('subject')->nullable();
-            $table->text('message')->nullable();
-            $table->timestamps();
-        });
-
       
 
         schema::create('our_services', function (Blueprint $table) {
@@ -108,7 +97,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('site_settings');
         Schema::dropIfExists('about_us');
-        Schema::dropIfExists('contact_us');
         Schema::dropIfExists('banners');
         Schema::dropIfExists('our_services');
         Schema::dropIfExists('services_disp');

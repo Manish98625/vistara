@@ -4,7 +4,7 @@
 @section('meta_description',
     'Read latest articles and insights about studying abroad, visa tips, university selection,
     and career guidance.')
-
+@section('canonical', url()->current())
 @section('content')
     <section class="section page-header-padding">
         <div class="container">

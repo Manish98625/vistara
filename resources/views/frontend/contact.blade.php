@@ -1,122 +1,220 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us | Vistara Education')
-@section('meta_description', 'Get in touch with Vistara Education Pvt. Ltd. for your overseas study journey.')
+@section('meta_description', 'Get in touch with Vistara Education Pvt. Ltd. for expert study abroad counselling, university admission guidance, and visa support.')
+@section('canonical', url()->current())
 
 @section('content')
-<section class="section page-header-padding">
-    <div class="container">
-        <h1 class="reveal">Get In Touch With Us</h1>
-        <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--text-muted); font-size: 1.05rem;">Have questions? We're here to help. Send us a message and we'll respond as soon as possible.</p>
-
-
-    <!-- Emergency Contact Bar -->
-   
-
-    <section class="section" style="background: var(--bg-alt);">
+    <section class="contact-hero">
         <div class="container">
-            <h2 class="reveal" style="text-align: center; margin-bottom: 60px;">Office Locations & Hours</h2>
-            
-            <div class="grid-responsive" style="margin-top: 50px;">
-                <div class="reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.4rem;"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>Head Office</h3>
-                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary);">
-                        <p style="margin-bottom: 10px;"><strong>Address:</strong> 123 Global Plaza, New Baneshwor, Kathmandu</p>
-                        <p style="margin-bottom: 10px;"><strong>Phone:</strong> +977 1 4445556</p>
-                        <p style="margin-bottom: 10px;"><strong>Email:</strong> info@vistara.edu.np</p>
-                        <p><strong>Office Hours:</strong> Sunday - Friday: 9:00 AM - 6:00 PM</p>
+            <div class="contact-hero-grid">
+                <div class="contact-hero-content reveal">
+                    <span class="contact-eyebrow">Contact Vistara Education</span>
+                    <h1>Let’s plan your study abroad journey with confidence.</h1>
+                    <p>
+                        Speak with our education counsellors for university selection, scholarships, visa guidance,
+                        test preparation, and complete admission support.
+                    </p>
+                    <div class="contact-hero-actions">
+                        <a href="#contact-form" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Inquiry
+                        </a>
+                        <a href="tel:+97714445556" class="btn btn-outline contact-hero-call">
+                            <i class="fas fa-phone-alt"></i> Call Now
+                        </a>
                     </div>
                 </div>
-                
-                <div class="reveal" style="transition-delay: 0.1s;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 1.4rem;"><i class="fas fa-clock" style="margin-right: 10px;"></i>Quick Response Time</h3>
-                    <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary);">
-                        <p style="margin-bottom: 10px;"><strong>Average Response:</strong> Within 2 hours during business days</p>
-                        <p style="margin-bottom: 10px;"><strong>WhatsApp Support:</strong> Available 24/7 for urgent queries</p>
-                        <p><strong>Consultation Booking:</strong> Schedule free counseling session online or by phone</p>
+
+                <div class="contact-hero-card reveal" style="transition-delay: 0.15s;">
+                    <div class="contact-hero-card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Fast Counselling Support</h3>
+                    <p>Our team usually responds within 2 business hours.</p>
+                    <div class="contact-mini-stats">
+                        <div>
+                            <strong>5,000+</strong>
+                            <span>Students Guided</span>
+                        </div>
+                        <div>
+                            <strong>500+</strong>
+                            <span>University Partners</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-            <!-- Contact Form -->
-            <div class="reveal" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #e8e8e8;">
-                @if ($errors->any())
-                    <div style="background: #fee; border: 1px solid #fcc; color: #c00; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                        <strong>Please fix the following errors:</strong>
-                        <ul style="margin: 10px 0 0 20px;">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
 
-                @if (session('success'))
-                    <div style="background: #efe; border: 1px solid #cfc; color: #0a0; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                        {{ session('success') }}
+    <section class="contact-quick-section">
+        <div class="container">
+            <div class="contact-quick-grid">
+                <a href="tel:+97714445556" class="contact-quick-card reveal">
+                    <span><i class="fas fa-phone-alt"></i></span>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+977 1 4445556</p>
                     </div>
-                @endif
-
-                <form action="{{ route('contact.store') }}" method="POST">
-                    @csrf
-                    <div style="margin-bottom: 22px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-heading); font-size: 0.95rem;">Full Name <span style="color: var(--primary);">*</span></label>
-                        <input type="text" name="name" required style="width: 100%; padding: 13px 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: var(--transition);" value="{{ old('name') }}" onFocus="this.style.borderColor='var(--primary)'" onBlur="this.style.borderColor='#ddd'">
+                </a>
+                <a href="mailto:info@vistara.edu.np" class="contact-quick-card reveal" style="transition-delay: 0.08s;">
+                    <span><i class="fas fa-envelope"></i></span>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>info@vistara.edu.np</p>
                     </div>
-
-                    <div style="margin-bottom: 22px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-heading); font-size: 0.95rem;">Email Address <span style="color: var(--primary);">*</span></label>
-                        <input type="email" name="email" required style="width: 100%; padding: 13px 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: var(--transition);" value="{{ old('email') }}" onFocus="this.style.borderColor='var(--primary)'" onBlur="this.style.borderColor='#ddd'">
+                </a>
+                <a href="https://wa.me/9779801234568" class="contact-quick-card reveal" style="transition-delay: 0.16s;">
+                    <span><i class="fab fa-whatsapp"></i></span>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>24/7 urgent support</p>
                     </div>
-
-                    <div style="margin-bottom: 22px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-heading); font-size: 0.95rem;">Phone Number</label>
-                        <input type="tel" name="phone" style="width: 100%; padding: 13px 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: var(--transition);" value="{{ old('phone') }}" onFocus="this.style.borderColor='var(--primary)'" onBlur="this.style.borderColor='#ddd'">
-                    </div>
-
-                    <div style="margin-bottom: 22px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-heading); font-size: 0.95rem;">Subject</label>
-                        <input type="text" name="subject" style="width: 100%; padding: 13px 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: var(--transition);" value="{{ old('subject') }}" onFocus="this.style.borderColor='var(--primary)'" onBlur="this.style.borderColor='#ddd'">
-                    </div>
-
-                    <div style="margin-bottom: 22px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-heading); font-size: 0.95rem;">Message <span style="color: var(--primary);">*</span></label>
-                        <textarea name="message" required rows="6" style="width: 100%; padding: 13px 15px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: inherit; resize: vertical; transition: var(--transition);" onFocus="this.style.borderColor='var(--primary)'" onBlur="this.style.borderColor='#ddd'">{{ old('message') }}</textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem; font-weight: 600;">Send Message</button>
-                </form>
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Contact Information -->
-            <div class="reveal contact-sidebar">
-                <div style="background: linear-gradient(135deg, var(--primary), #8B004B); color: white; padding: 35px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(165,0,0,0.2);">
-                    <h3 style="margin-top: 0; margin-bottom: 25px; font-size: 1.3rem;">Contact Information</h3>
-                    <div style="margin: 20px 0;">
-                        <h4 style="margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 12px;"><i class="fas fa-map-marker-alt" style="color: #fff; font-size: 1.2rem;"></i> Address</h4>
-                        <p style="margin: 0; margin-left: 32px; font-size: 0.95rem; opacity: 0.95;">123 Global Plaza, New Baneshwor, Kathmandu, Nepal</p>
+    <section class="contact-main-section" id="contact-form">
+        <div class="container">
+            <div class="contact-main-grid">
+                <div class="contact-form-card reveal">
+                    <div class="contact-section-heading">
+                        <span>Send your inquiry</span>
+                        <h2>Get a free consultation</h2>
+                        <p>Fill out the form and our counsellor will contact you with the right next steps.</p>
                     </div>
-                    <div style="margin: 20px 0;">
-                        <h4 style="margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 12px;"><i class="fas fa-phone" style="color: #fff; font-size: 1.2rem;"></i> Phone</h4>
-                        <p style="margin: 0; margin-left: 32px; font-size: 0.95rem; opacity: 0.95;">+977 1 4445556</p>
-                    </div>
-                    <div style="margin: 20px 0;">
-                        <h4 style="margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 12px;"><i class="fas fa-envelope" style="color: #fff; font-size: 1.2rem;"></i> Email</h4>
-                        <p style="margin: 0; margin-left: 32px; font-size: 0.95rem; opacity: 0.95;">info@vistara.edu.np</p>
-                    </div>
+
+                    @if ($errors->any())
+                        <div class="contact-alert contact-alert-error" role="alert">
+                            <strong>Please fix the following errors:</strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if (session('success'))
+                        <div class="contact-alert contact-alert-success" role="status">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <form action="{{ route('contact.store') }}" method="POST" class="premium-contact-form">
+                        @csrf
+                        <div class="contact-form-row">
+                            <div class="contact-field">
+                                <label for="contact-name">Full Name <span>*</span></label>
+                                <div class="contact-input-wrap">
+                                    <i class="fas fa-user"></i>
+                                    <input id="contact-name" type="text" name="name" required value="{{ old('name') }}" placeholder="Your full name">
+                                </div>
+                            </div>
+                            <div class="contact-field">
+                                <label for="contact-email">Email Address <span>*</span></label>
+                                <div class="contact-input-wrap">
+                                    <i class="fas fa-envelope"></i>
+                                    <input id="contact-email" type="email" name="email" required value="{{ old('email') }}" placeholder="you@example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-row">
+                            <div class="contact-field">
+                                <label for="contact-phone">Phone Number</label>
+                                <div class="contact-input-wrap">
+                                    <i class="fas fa-phone"></i>
+                                    <input id="contact-phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="+977 98XXXXXXXX">
+                                </div>
+                            </div>
+                            <div class="contact-field">
+                                <label for="contact-subject">Interested Service</label>
+                                <div class="contact-input-wrap">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <input id="contact-subject" type="text" name="subject" value="{{ old('subject') }}" placeholder="Study abroad, visa, IELTS...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contact-message">Message <span>*</span></label>
+                            <div class="contact-input-wrap contact-textarea-wrap">
+                                <i class="fas fa-comment-dots"></i>
+                                <textarea id="contact-message" name="message" required rows="6" placeholder="Tell us your preferred country, course, and current academic background...">{{ old('message') }}</textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary contact-submit-btn">
+                            Submit Inquiry <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
                 </div>
 
-                <div style="background: #f8f9fa; padding: 35px; border-radius: 15px; border: 1px solid #e8e8e8;">
-                    <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.3rem;">Business Hours</h3>
-                    <div style="space: 15px;">
-                        <p style="margin: 12px 0; font-size: 0.95rem;"><strong style="color: var(--text-heading);">Monday - Friday:</strong> <span style="color: var(--text-muted);">10:00 AM - 6:00 PM</span></p>
-                        <p style="margin: 12px 0; font-size: 0.95rem;"><strong style="color: var(--text-heading);">Saturday:</strong> <span style="color: var(--text-muted);">10:00 AM - 4:00 PM</span></p>
-                        <p style="margin: 12px 0; font-size: 0.95rem;"><strong style="color: var(--text-heading);">Sunday:</strong> <span style="color: var(--text-muted);">Closed</span></p>
+                <aside class="contact-info-panel reveal" style="transition-delay: 0.12s;">
+                    <div class="contact-info-card contact-info-gradient">
+                        <span class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <h3>Visit Our Office</h3>
+                        <p>123 Global Plaza, New Baneshwor, Kathmandu, Nepal</p>
                     </div>
+
+                    <div class="contact-info-card">
+                        <span class="contact-info-icon"><i class="fas fa-clock"></i></span>
+                        <h3>Office Hours</h3>
+                        <ul class="contact-hours-list">
+                            <li><strong>Sunday - Friday</strong><span>9:00 AM - 6:00 PM</span></li>
+                            <li><strong>Saturday</strong><span>10:00 AM - 4:00 PM</span></li>
+                            <li><strong>Public Holidays</strong><span>Appointment Only</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <span class="contact-info-icon"><i class="fas fa-shield-alt"></i></span>
+                        <h3>Why Contact Us?</h3>
+                        <ul class="contact-check-list">
+                            <li><i class="fas fa-check"></i> Free initial counselling</li>
+                            <li><i class="fas fa-check"></i> Scholarship and admission guidance</li>
+                            <li><i class="fas fa-check"></i> Visa documentation support</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-map-section">
+        <div class="container">
+            <div class="contact-map-card reveal">
+                <div class="contact-map-content">
+                    <span>Find us easily</span>
+                    <h2>Located in the heart of Kathmandu</h2>
+                    <p>Visit our office for one-on-one counselling and complete documentation support.</p>
+                    <a href="https://www.google.com/maps/search/New+Baneshwor+Kathmandu" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <i class="fas fa-location-arrow"></i> Open in Google Maps
+                    </a>
+                </div>
+                <div class="contact-map-embed" aria-label="Map location preview">
+                    <iframe
+                        title="Vistara Education office location"
+                        src="https://www.google.com/maps?q=New%20Baneshwor%20Kathmandu&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="contact-cta-section">
+        <div class="container">
+            <div class="contact-cta-card reveal">
+                <div>
+                    <span>Ready to begin?</span>
+                    <h2>Book your free study abroad counselling session today.</h2>
+                </div>
+                <a href="tel:+97714445556" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+            </div>
+        </div>
+    </section>
 @endsection

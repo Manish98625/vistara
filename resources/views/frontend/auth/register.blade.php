@@ -2,14 +2,14 @@
 
 @section('title', 'Sign Up | Vistara Education')
 @section('meta_description', 'Create your account at Vistara Education Pvt. Ltd. - Best education consultancy in Nepal')
-
+@section('canonical', url()->current())
 @section('content')
-<section class="section" style="min-height: 100vh; background: linear-gradient(135deg, #f8f9fa, #e9ecef); display: flex; align-items: center; padding: 40px 0;">
+<section class="section registration-page">
     <div class="container">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <div class="registration-container">
             
             <!-- Left Side - Welcome Content -->
-            <div class="reveal">
+            <div class="reveal registration-welcome">
                 <div style="margin-bottom: 30px;">
                     <img src="{{ asset('assets/brand/vistara-logo-custom.svg') }}" alt="Vistara Education Logo" style="height: 80px; width: auto; margin-bottom: 20px;">
                 </div>
@@ -23,19 +23,19 @@
                 </p>
                 
                 <!-- Trust Indicators -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
-                    <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                <div class="registration-trust-grid">
+                    <div class="trust-indicator">
                         <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">98% Visa Success Rate</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Expert guidance for visa applications</p>
                     </div>
-                    <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <div class="trust-indicator">
                         <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">500+ Universities</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Global partnerships worldwide</p>
                     </div>
                 </div>
                 
                 <!-- Services List -->
-                <div style="background: white; padding: 25px; border-radius: 10px;">
+                <div class="services-list">
                     <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1.1rem;">What You Get:</h4>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li style="margin-bottom: 10px; color: var(--text-muted);"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Free Career Counseling</li>
@@ -49,7 +49,7 @@
             
             <!-- Right Side - Registration Form -->
             <div class="reveal" style="transition-delay: 0.2s;">
-                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                <div class="registration-form-container">
                     <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Playfair Display', serif; color: var(--primary);">Create Your Account</h2>
                     
                     @if ($errors->any())
@@ -61,14 +61,14 @@
                         </div>
                     @endif
                     
-                    <form action="{{ route('register.post') }}" method="POST">
+                    <form action="{{ route('register.post') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         
                         <!-- Personal Information -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 25px;">
+                        <div class="form-section">
                             <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1rem;">Personal Information</h4>
                             
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                            <div class="registration-field-grid">
                                 <div>
                                     <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-heading); font-size: 0.9rem;">First Name *</label>
                                     <input type="text" name="first_name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;" value="{{ old('first_name') }}">
@@ -88,10 +88,20 @@
                                 <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-heading); font-size: 0.9rem;">Phone Number *</label>
                                 <input type="tel" name="phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;" value="{{ old('phone') }}">
                             </div>
+
+                            <div class="registration-upload-field">
+                                <span class="registration-upload-title">Profile Image</span>
+                                <label class="registration-upload-box">
+                                    <input type="file" name="profile_image" accept="image/jpeg,image/png,image/webp">
+                                    <span class="registration-upload-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                                    <span class="registration-upload-text">Upload your photo</span>
+                                    <span class="registration-upload-help">JPG, PNG, or WEBP up to 2MB</span>
+                                </label>
+                            </div>
                         </div>
                         
                         <!-- Study Preferences -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 25px;">
+                        <div class="form-section">
                             <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1rem;">Study Preferences</h4>
                             
                             <div style="margin-bottom: 15px;">
@@ -125,7 +135,7 @@
                         </div>
                         
                         <!-- Account Security -->
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 25px;">
+                        <div class="form-section">
                             <h4 style="color: var(--primary); margin-bottom: 15px; font-size: 1rem;">Account Security</h4>
                             
                             <div style="margin-bottom: 15px;">
@@ -160,12 +170,12 @@
                     </p>
                     
                     <!-- Trust Badges -->
-                    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <div class="trust-badges">
                         <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 10px;">Government Registered & ISO Certified</p>
-                        <div style="display: flex; justify-content: center; gap: 20px;">
-                            <div style="width: 60px; height: 40px; background: #f0f0f0; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #666;">NAAER</div>
-                            <div style="width: 60px; height: 40px; background: #f0f0f0; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #666;">IERIN</div>
-                            <div style="width: 60px; height: 40px; background: #f0f0f0; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #666;">ISO</div>
+                        <div class="trust-badges-list">
+                            <div class="trust-badge-item">NAAER</div>
+                            <div class="trust-badge-item">IERIN</div>
+                            <div class="trust-badge-item">ISO</div>
                         </div>
                     </div>
                 </div>
@@ -174,3 +184,4 @@
     </div>
 </section>
 @endsection
+

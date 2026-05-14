@@ -2,7 +2,7 @@
 
 @section('title', $blog->title . ' | Vistara Education')
 @section('meta_description', Str::limit($blog->excerpt ?? $blog->content, 160))
-
+@section('canonical', url()->current())
 @section('content')
 <article class="section page-header-padding" style="max-width: 900px; margin: 0 auto;">
     <div class="reveal">

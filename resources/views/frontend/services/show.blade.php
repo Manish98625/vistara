@@ -2,7 +2,7 @@
 @foreach ($servicediscp as $discp)
     @section('title', $discp->title . ' | Vistara Education')
     @section('meta_description', Str::limit($discp->description ?? '', 160))
-
+    @section('canonical', url()->current())
     @section('content')
         <section class="section page-header-padding">
             <div class="container">

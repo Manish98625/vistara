@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             navMain.classList.toggle('active');
             hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navMain.classList.contains('active') ? 'true' : 'false');
             // Prevent body scroll when menu is open
             document.body.style.overflow = navMain.classList.contains('active') ? 'hidden' : '';
         });
@@ -59,10 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 992 && navMain && hamburger) {
             if (!navMain.contains(e.target) && !hamburger.contains(e.target)) {
                 navMain.classList.remove('active');
                 hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             }
         }
@@ -70,9 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close mobile menu on window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
+        if (window.innerWidth > 992 && navMain && hamburger) {
             navMain.classList.remove('active');
             hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
     });

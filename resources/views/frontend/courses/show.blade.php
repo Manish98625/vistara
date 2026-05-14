@@ -2,7 +2,7 @@
 
 @section('title', $course->title . ' | Vistara Education')
 @section('meta_description', Str::limit($course->description ?? '', 160))
-
+@section('canonical', url()->current())
 @section('content')
     {{-- @foreach ($courseDetails as $course) --}}
     <section class="section page-header-padding">
@@ -55,7 +55,7 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="/contact.html" class="btn btn-primary" style="width: 100%;">Apply for this Course</a>
+                    <a href="{{ route('contact') }}" class="btn btn-primary" style="width: 100%;">Apply for this Course</a>
                 </div>
             </div>
         </div>
@@ -64,3 +64,4 @@
 
    
 @endsection
+

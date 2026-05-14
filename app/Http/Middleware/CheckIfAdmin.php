@@ -27,8 +27,7 @@ class CheckIfAdmin
      */
     private function checkIfUserIsAdmin($user)
     {
-        // return ($user->is_admin == 1);
-        return true;
+        return $user && method_exists($user, 'isAdmin') && $user->isAdmin();
     }
 
     /**
@@ -37,12 +36,16 @@ class CheckIfAdmin
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    private function respondToUnauthorizedRequest($request)
+    private function respondToUnauthorizedRequest($request, $isGuest = false)
     {
         if ($request->ajax() || $request->wantsJson()) {
             return response(trans('backpack::base.unauthorized'), 401);
         } else {
-            return redirect()->guest(backpack_url('login'));
+            if ($isGuest) {
+                return redirect()->guest(route('login'));
+            }
+
+            return redirect()->route('home')->with('error', 'Only administrators can access the admin panel.');
         }
     }
 
@@ -56,7 +59,7 @@ class CheckIfAdmin
     public function handle($request, Closure $next)
     {
         if (backpack_auth()->guest()) {
-            return $this->respondToUnauthorizedRequest($request);
+            return $this->respondToUnauthorizedRequest($request, true);
         }
 
         if (! $this->checkIfUserIsAdmin(backpack_user())) {

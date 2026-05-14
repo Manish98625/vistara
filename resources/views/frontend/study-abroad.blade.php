@@ -2,7 +2,7 @@
 
 @section('title', 'Study Abroad Destinations | Vistara Education')
 @section('meta_description', 'Explore top study destinations - Australia, UK, USA, Canada. Find the right country for your international education journey.')
-
+@section('canonical', url()->current())
 @section('content')
 <section class="page-header study-abroad-header" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ asset('assets/img/banner.jpg') }}'); text-align: center; color: white; background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="container">

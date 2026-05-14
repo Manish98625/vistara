@@ -3,7 +3,7 @@
 @section('title', 'Popular Courses | Vistara Education')
 @section('meta_description',
     'Explore popular study programs - IT, Business, Nursing, Engineering, Hospitality. Find the best courses for your international education with Vistara Education.')
-
+@section('canonical', url()->current())
 @section('content')
     <!-- Course Hero Section -->
     <section class="section page-header-padding" style="padding-bottom: 60px;">

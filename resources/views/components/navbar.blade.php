@@ -1,8 +1,7 @@
-<!-- Navigation -->
-<nav class="scrolled">
+<nav class="site-navbar scrolled">
     <div class="container nav-container">
-        <a href="{{ route('home') }}" class="logo">
-            <img src="/assets/brand/vistara-logo-main.svg" alt="Vistara Logo" style="height: 60px; width: auto;">
+        <a href="{{ route('home') }}" class="logo" aria-label="Vistara Education home">
+            <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education">
         </a>
 
         <div class="nav-main">
@@ -49,17 +48,40 @@
                 <li><a href="{{ route('blog') }}">Blog</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
+
+            <div class="nav-auth nav-auth-mobile">
+                @auth
+                    <span class="nav-user-badge"><i class="fas fa-user-check"></i> {{ Auth::user()->name }}</span>
+                    <form action="{{ route('logout') }}" method="POST" class="nav-logout-form">
+                        @csrf
+                        <button type="submit" class="btn btn-outline btn-sm nav-login-btn">Logout</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-sm nav-login-btn"><i class="fas fa-user"></i> Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Register</a>
+                @endauth
+            </div>
         </div>
 
         <div class="nav-auth">
-            <a href="{{ route('login') }}" class="btn btn-outline btn-sm">Login</a>
-            <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Register</a>
+            @auth
+                <span class="nav-user-badge"><i class="fas fa-user-check"></i> {{ Auth::user()->name }}</span>
+                <form action="{{ route('logout') }}" method="POST" class="nav-logout-form">
+                    @csrf
+                    <button type="submit" class="btn btn-outline btn-sm nav-login-btn">Logout</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="btn btn-primary btn-sm nav-login-btn"><i class="fas fa-user"></i> Login</a>
+                <a href="{{ route('register') }}" class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i> Register</a>
+            @endauth
+            <a href="{{ route('inquiry') }}" class="btn btn-secondary btn-sm nav-inquiry-btn"><i class="fas fa-paper-plane"></i> Inquiry</a>
         </div>
 
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
+

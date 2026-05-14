@@ -2,7 +2,7 @@
 
 @section('title', 'Study in ' . ($studyAbroad->title) . ' | Vistara Education')
 @section('meta_description', Str::limit($studyAbroad->description , 160))
-
+@section('canonical', url()->current())
 @section('content')
 <section class="section page-header-padding">
         <div class="container">
@@ -18,7 +18,7 @@
                             <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> {{$studyAbroad->benefit_three}}</li>
                         </ul>
                     </div>
-                    <a href="{{route('contact')}}" class="btn btn-primary" style="margin-top: 30px;">Apply for Australia</a>
+                    <a href="{{route('contact')}}" class="btn btn-primary" style="margin-top: 30px;">Apply for {{ $studyAbroad->title }}</a>
                 </div>
                 <div class="reveal">
                     <img src="{{asset('/uploads/' . $studyAbroad->image) }}" alt="{{$studyAbroad->title}}" loading="lazy" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
@@ -26,7 +26,7 @@
             </div>
         
             <div class="reveal" style="margin-top: 60px; background: var(--bg-alt); padding: clamp(25px, 5vw, 40px); border-radius: 15px;">
-                <h2 style="text-align:left; margin-bottom:20px;">Study in Australia Overview</h2>
+                <h2 style="text-align:left; margin-bottom:20px;">Study in {{ $studyAbroad->title }} Overview</h2>
                 <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
                     <div><h4 style="color:var(--primary); margin-bottom:5px;">Why Study Here?</h4><p>{{$studyAbroad->why_study_here}}</p></div>
                     <div><h4 style="color:var(--primary); margin-bottom:5px;">Cost Overview</h4><p>{{$studyAbroad->cost_overview}}</p></div>
@@ -70,7 +70,7 @@
                     </div>
                 @endforeach
                 </div>
-            </div>+
+            </div>
         </div>
     </section>
 
@@ -118,3 +118,4 @@
 
 
 @endsection
+

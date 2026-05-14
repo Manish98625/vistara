@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\StudyAbroadDetails;
 use App\Models\University;
-use Illuminate\View\View;
-use Illuminate\Http\Response;
 
 class StudyCountryController extends Controller
 {
     
-    public function show($id): View|Response
+    public function show($id)
     {
         $studyAbroad = StudyAbroadDetails::findOrFail($id);
 
@@ -22,3 +20,4 @@ class StudyCountryController extends Controller
         ]);
     }
 }
+
