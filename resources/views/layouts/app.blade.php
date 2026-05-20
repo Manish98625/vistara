@@ -28,7 +28,12 @@
     <link rel="shortcut icon" type="image/svg+xml" href="{{ asset('assets/brand/vistara-favicon.svg') }}">
 
     {{-- Stylesheets --}}
+    @production
+    <link rel="preload" href="{{ asset('css/style.min.css') }}" as="style">
+    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
+    @else
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @endproduction
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     @yield('extra_css')
@@ -59,7 +64,11 @@
     @include('components.cookie-banner')
 
     {{-- Scripts --}}
-    <script src="{{ asset('js/script.js') }}"></script>
+    @production
+    <script src="{{ asset('js/script.min.js') }}" defer></script>
+    @else
+    <script src="{{ asset('js/script.js') }}" defer></script>
+    @endproduction
     @yield('scripts')
 </body>
 
