@@ -92,7 +92,6 @@
             <div class="footer-bottom-links">
                 <a href="{{ route('terms') }}">Terms & Conditions</a>
                 <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
-                <a href="{{ route('refund-policy') }}">Refund Policy</a>
             </div>
         </div>
     </div>

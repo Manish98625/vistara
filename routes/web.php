@@ -33,7 +33,7 @@ Route::get('/study-abroad', [PageController::class, 'studyAbroad'])->name('study
 Route::get('/interview-preparation', [PageController::class, 'interviewPreparation'])->name('interview-prep');
 Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');
-Route::get('/refund-policy', [PageController::class, 'refundPolicy'])->name('refund-policy');
+
 
 // Services Detail
 Route::get('/services/{slug}', [ServiceDetailController::class, 'show'])->name('service.show');

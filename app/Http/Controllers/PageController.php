@@ -61,10 +61,6 @@ class PageController extends Controller
         return view('frontend.pages.privacy-policy');
     }
 
-    public function refundPolicy(): View
-    {
-        return view('frontend.pages.refund-policy');
-    }
 
     public function terms(): View
     {
