@@ -46,6 +46,10 @@
 
                     <form action="{{ route('inquiry.store') }}" method="POST" class="premium-contact-form">
                         @csrf
+                        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <label for="inquiry-website">Website</label>
+                            <input type="text" id="inquiry-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="contact-form-row">
                             <div class="contact-field">
                                 <label for="inquiry-name">Full Name <span>*</span></label>

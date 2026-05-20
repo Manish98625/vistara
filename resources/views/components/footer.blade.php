@@ -81,9 +81,9 @@
                 </form>
 
                 <div class="social-links" style="margin-top: 25px;">
-                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/vistaraeducation" target="_blank" rel="noopener" title="Facebook" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/vistaraeducation" target="_blank" rel="noopener" title="Instagram" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/vistaraeducation" target="_blank" rel="noopener" title="LinkedIn" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>

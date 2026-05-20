@@ -8,7 +8,7 @@
     <div class="container">
         <div style="max-width: 400px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 25px;">
-                <img src="{{ asset('uploads/vistara-logo-main.svg') }}" alt="Vistara Education Logo" style="height: 60px; width: auto;">
+                <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education Logo" style="height: 60px; width: auto;">
             </div>
             <h1 style="text-align: center; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Sign In</h1>
 

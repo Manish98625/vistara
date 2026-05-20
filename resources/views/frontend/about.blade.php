@@ -40,6 +40,7 @@
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
                         alt="Vistara Education - Guiding Students to Global Universities"
+                        loading="lazy"
                         style="width: 100%; border-radius: 20px;">
                 </div>
             </div>
@@ -169,7 +170,7 @@
             <div class="grid-responsive mt-50">
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
-                        alt="Why Choose Vistara Education" style="width: 100%; border-radius: 15px;">
+                        alt="Why Choose Vistara Education" loading="lazy" style="width: 100%; border-radius: 15px;">
                 </div>
 
                 <div class="reveal">
@@ -281,3 +282,31 @@
 
 
 @endsection
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Vistara Education",
+    "description": "Learn about Vistara Education Pvt. Ltd., your trusted partner for overseas education with 12+ years of experience.",
+    "url": "{{ url()->current() }}",
+    "about": {
+        "@type": "EducationalOrganization",
+        "name": "Vistara Education Pvt. Ltd.",
+        "url": "{{ route('home') }}",
+        "logo": "{{ asset('assets/brand/vistara-logo-main.svg') }}",
+        "description": "Leading education consultancy in Nepal offering expert counseling for studying abroad.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Global Plaza, New Baneshwor",
+            "addressLocality": "Kathmandu",
+            "addressCountry": "Nepal"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+977 1 4445556",
+            "contactType": "customer service"
+        }
+    }
+}
+</script>

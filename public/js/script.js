@@ -95,6 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, 5000);
     }
 
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        const toggleBackToTop = () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('is-visible');
+            } else {
+                backToTop.classList.remove('is-visible');
+            }
+        };
+        toggleBackToTop();
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Scroll Reveal Animation (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -239,5 +256,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (track && testimonialSlides.length > 0) {
         setInterval(nextTestimonial, 4000);
+    }
+
+    // Cookie Consent Banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAcceptBtn = document.getElementById('cookieAccept');
+
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+    }
+
+    function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = name + '=' + value + '; expires=' + expires + '; path=/; SameSite=Lax';
+    }
+
+    if (cookieBanner && !getCookie('cookie_consent')) {
+        cookieBanner.removeAttribute('hidden');
+        setTimeout(() => cookieBanner.classList.add('is-visible'), 600);
+    }
+
+    if (cookieAcceptBtn) {
+        cookieAcceptBtn.addEventListener('click', () => {
+            setCookie('cookie_consent', 'accepted', 365);
+            cookieBanner.classList.remove('is-visible');
+            setTimeout(() => cookieBanner.setAttribute('hidden', ''), 400);
+        });
     }
 });

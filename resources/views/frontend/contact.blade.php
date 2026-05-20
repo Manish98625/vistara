@@ -103,6 +103,10 @@
 
                     <form action="{{ route('contact.store') }}" method="POST" class="premium-contact-form">
                         @csrf
+                        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <label for="contact-website">Website</label>
+                            <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="contact-form-row">
                             <div class="contact-field">
                                 <label for="contact-name">Full Name <span>*</span></label>
@@ -218,3 +222,39 @@
         </div>
     </section>
 @endsection
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Vistara Education",
+    "description": "Get in touch with Vistara Education Pvt. Ltd. for expert study abroad counselling, university admission guidance, and visa support.",
+    "url": "{{ url()->current() }}",
+    "mainEntity": {
+        "@type": "EducationalOrganization",
+        "name": "Vistara Education Pvt. Ltd.",
+        "telephone": "+977 1 4445556",
+        "email": "info@vistara.edu.np",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Global Plaza, New Baneshwor",
+            "addressLocality": "Kathmandu",
+            "addressCountry": "Nepal"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "16:00"
+            }
+        ]
+    }
+}
+</script>

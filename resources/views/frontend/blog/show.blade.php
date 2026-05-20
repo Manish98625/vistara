@@ -74,3 +74,30 @@
     'button_link' => route('contact')
 ])
 @endsection
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ $blog->title }}",
+    "description": "{{ Str::limit(strip_tags($blog->excerpt ?? $blog->content), 160) }}",
+    "url": "{{ url()->current() }}",
+    "datePublished": "{{ $blog->published_at?->toIso8601String() }}",
+    "dateModified": "{{ $blog->updated_at?->toIso8601String() }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ $blog->author ?? 'Vistara Education' }}"
+    },
+    "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Vistara Education Pvt. Ltd.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset('assets/brand/vistara-logo-main.svg') }}"
+        }
+    }
+    @if($blog->featured_image)
+    ,"image": "{{ $blog->featured_image }}"
+    @endif
+}
+</script>

@@ -14,6 +14,12 @@
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:type" content="website">
 
+    {{-- Twitter Card Tags --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Vistara Education Pvt. Ltd.')">
+    <meta name="twitter:description" content="@yield('og_description', 'Premium education consultancy for overseas studies - Vistara Education')">
+    <meta name="twitter:image" content="@yield('og_image', asset('assets/brand/vistara-logo-main.svg'))">
+
     {{-- Canonical URL --}}
     <link rel="canonical" href="@yield('canonical', url()->current())">
 
@@ -35,11 +41,22 @@
     {{-- Navigation --}}
     @include('components.navbar')
 
+    {{-- Breadcrumb --}}
+    @include('components.breadcrumb')
+
     {{-- Main Content --}}
     @yield('content')
 
     {{-- Footer --}}
     @include('components.footer')
+
+    {{-- Back to Top Button --}}
+    <button type="button" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    {{-- Cookie Consent Banner --}}
+    @include('components.cookie-banner')
 
     {{-- Scripts --}}
     <script src="{{ asset('js/script.js') }}"></script>

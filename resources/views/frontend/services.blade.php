@@ -94,3 +94,26 @@
 
 
 @endsection
+
+@if(isset($support) && count($support) > 0)
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Student Support Services",
+    "itemListElement": [
+        @foreach($support as $index => $sup)
+        {
+            "@type": "ListItem",
+            "position": {{ $index + 1 }},
+            "item": {
+                "@type": "Service",
+                "name": "{{ $sup->title }}",
+                "description": "{{ Str::limit(strip_tags($sup->description), 150) }}"
+            }
+        }@if(!$loop->last),@endif
+        @endforeach
+    ]
+}
+</script>
+@endif

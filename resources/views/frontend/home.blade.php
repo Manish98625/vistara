@@ -90,7 +90,7 @@
                         <p style="color: #666; font-size: 0.95rem; margin-bottom: 20px;">
                             {{ Str::limit($service->description ?? 'Expert guidance', 120) }}
                         </p>
-                        <a href="{{ route('service.show', $service->slug ?? Str::slug($service->title)) }}"
+                        <a href="{{ $service->id == 2 ? route('service.test-preparation') : route('service.show', $service->id) }}"
                             class="btn btn-primary btn-sm">Learn More</a>
                     </div>
                 @empty
@@ -108,42 +108,17 @@
             <p style="text-align: center; max-width: 700px; margin: 0 auto 50px;">Choose from a variety of countries that
                 offer world-class education and incredible career prospects.</p>
             <div class="dest-grid">
-                <a href="{{ route('study.show', 'australia') }}" class="dest-card reveal"
+            @foreach($courses as $course)
+                <a href="{{ route('study.show', $course->id) }}" class="dest-card reveal"
                     style="cursor: pointer; text-decoration: none;">
-                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&q=80&w=800"
-                        alt="Australia" loading="lazy">
+                    <img src="{{'/uploads/'.$course->image}}"
+                        alt="{{ $course->title }}" loading="lazy">
                     <div class="dest-overlay">
-                        <h3>Australia</h3>
-                        <p>World-class education & PR pathways</p>
+                        <h3>{{ $course->title }}</h3>
+                        <p>{{ $course->description }}</p>
                     </div>
                 </a>
-                <a href="{{ route('study.show', 'canada') }}" class="dest-card reveal"
-                    style="cursor: pointer; text-decoration: none;">
-                    <img src="https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&q=80&w=800"
-                        alt="Canada" loading="lazy">
-                    <div class="dest-overlay">
-                        <h3>Canada</h3>
-                        <p>Safe environment & work options</p>
-                    </div>
-                </a>
-                <a href="{{ route('study.show', 'uk') }}" class="dest-card reveal"
-                    style="cursor: pointer; text-decoration: none;">
-                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=800"
-                        alt="UK" loading="lazy">
-                    <div class="dest-overlay">
-                        <h3>United Kingdom</h3>
-                        <p>Historic universities & research excellence</p>
-                    </div>
-                </a>
-                <a href="{{ route('study.show', 'usa') }}" class="dest-card reveal"
-                    style="cursor: pointer; text-decoration: none;">
-                    <img src="https://images.unsplash.com/photo-1550721444-f87899a43e60?auto=format&fit=crop&q=80&w=800"
-                        alt="USA" loading="lazy">
-                    <div class="dest-overlay">
-                        <h3>United States</h3>
-                        <p>Ivy League & abundant OPT opportunities</p>
-                    </div>
-                </a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -414,7 +389,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Testimonials -->
     <section class="section">
         <div class="container">

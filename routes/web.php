@@ -50,24 +50,24 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 // Contact
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/inquiry', [ContactController::class, 'inquiry'])->name('inquiry');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::post('/inquiry', [ContactController::class, 'storeInquiry'])->name('inquiry.store');
-Route::post('/newsletter', [ContactController::class, 'storeNewsletter'])->name('newsletter.store');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store')->middleware('throttle:5,1');
+Route::post('/inquiry', [ContactController::class, 'storeInquiry'])->name('inquiry.store')->middleware('throttle:5,1');
+Route::post('/newsletter', [ContactController::class, 'storeNewsletter'])->name('newsletter.store')->middleware('throttle:5,1');
 
 // Review
 Route::get('/write-review', [ReviewController::class, 'show'])->name('review');
-Route::post('/write-review', [ReviewController::class, 'store'])->name('review.store');
+Route::post('/write-review', [ReviewController::class, 'store'])->name('review.store')->middleware('throttle:3,1');
 
 // Authentication
 Route::get('/signin', [AuthController::class, 'showLogin'])->name('login');
 Route::get('/signup', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post')->middleware('throttle:10,1');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post')->middleware('throttle:5,1');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/admin/logout', [AuthController::class, 'logout'])->name('backpack.auth.logout');
 Route::post('/admin/logout', [AuthController::class, 'logout']);
 Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
-Route::post('/forgot-password', [AuthController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::post('/forgot-password', [AuthController::class, 'sendResetLinkEmail'])->name('password.email')->middleware('throttle:3,10');
 Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])->name('password.reset');
 Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 

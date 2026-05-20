@@ -18,3 +18,5 @@
 <x-backpack::menu-item title="Faqs" icon="la la-question-circle nav-icon" :link="backpack_url('faq')" />
 <x-backpack::menu-item title="Choose us" icon="las la-chalkboard-teacher nav-icon" :link="backpack_url('choose-us')" />
 
+
+<x-backpack::menu-item title="Blogs" icon="la la-question" :link="backpack_url('blog')" />

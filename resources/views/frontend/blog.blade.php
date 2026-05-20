@@ -43,7 +43,7 @@
                 @endforelse
             </div>
 
-            @if ($blogs instanceof \Illuminate\Pagination\Paginator)
+            @if ($blogs instanceof \Illuminate\Pagination\LengthAwarePaginator)
                 <div style="margin-top: 50px; display: flex; justify-content: center; gap: 10px;">
                     {{ $blogs->links() }}
                 </div>
@@ -53,3 +53,26 @@
 
 
 @endsection
+
+@if(isset($blogs) && count($blogs) > 0)
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Vistara Education Blog",
+    "description": "Read latest articles and insights about studying abroad, visa tips, university selection, and career guidance.",
+    "url": "{{ url()->current() }}",
+    "blogPost": [
+        @foreach($blogs as $index => $blog)
+        {
+            "@type": "BlogPosting",
+            "headline": "{{ $blog->title }}",
+            "description": "{{ Str::limit(strip_tags($blog->excerpt ?? $blog->content), 150) }}",
+            "url": "{{ route('blog.show', $blog->slug) }}",
+            "datePublished": "{{ $blog->published_at?->toIso8601String() }}"
+        }@if(!$loop->last),@endif
+        @endforeach
+    ]
+}
+</script>
+@endif

@@ -155,7 +155,7 @@
                             <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
                                 <input type="checkbox" name="terms" required style="margin-top: 3px;">
                                 <span style="font-size: 0.9rem; color: var(--text-muted);">
-                                    I agree to the <a href="#" style="color: var(--primary); font-weight: 600;">Terms and Conditions</a> and <a href="#" style="color: var(--primary); font-weight: 600;">Privacy Policy</a>
+                                    I agree to the <a href="{{ route('terms') }}" style="color: var(--primary); font-weight: 600;">Terms and Conditions</a> and <a href="{{ route('privacy-policy') }}" style="color: var(--primary); font-weight: 600;">Privacy Policy</a>
                                 </span>
                             </label>
                         </div>

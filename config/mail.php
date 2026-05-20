@@ -113,4 +113,16 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Notification Email
+    |--------------------------------------------------------------------------
+    |
+    | Email address that receives a copy of every contact, inquiry, and
+    | newsletter submission. Leave ADMIN_EMAIL empty in .env to disable.
+    |
+    */
+
+    'admin_email' => env('ADMIN_EMAIL'),
+
 ];
