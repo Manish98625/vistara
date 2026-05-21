@@ -14,6 +14,10 @@ return [
     |
     */
 
+    'google' => [
+        'search_console_verification' => env('GOOGLE_SEARCH_CONSOLE_VERIFICATION'),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

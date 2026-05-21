@@ -50,9 +50,4 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
-    <url>
-        <loc>https://vistaraedu.com.np/refund-policy</loc>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
 </urlset>

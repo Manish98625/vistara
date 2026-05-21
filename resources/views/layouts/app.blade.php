@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{-- Google Search Console Verification --}}
+    @if(config('services.google.search_console_verification'))
+    <meta name="google-site-verification" content="{{ config('services.google.search_console_verification') }}">
+    @endif
+
     <title>@yield('title', 'Vistara Education Pvt. Ltd. | Premium Overseas Study Consultancy')</title>
     <meta name="description" content="@yield('meta_description', 'Expert education consultancy for overseas studies. Get counseling, university placement, and visa guidance from Vistara Education.')">
 

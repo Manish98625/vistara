@@ -22,6 +22,9 @@ use App\Http\Controllers\TestPreprationController;
 |
 */
 
+// Sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
