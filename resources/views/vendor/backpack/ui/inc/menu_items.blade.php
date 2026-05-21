@@ -17,6 +17,5 @@
 <x-backpack::menu-item title="Testimonials" icon="la la-comment nav-icon" :link="backpack_url('testimonial')" />
 <x-backpack::menu-item title="Faqs" icon="la la-question-circle nav-icon" :link="backpack_url('faq')" />
 <x-backpack::menu-item title="Choose us" icon="las la-chalkboard-teacher nav-icon" :link="backpack_url('choose-us')" />
-
-<x-backpack::menu-item title="Contact" icon="la la-envelope nav-icon" :link="backpack_url('contact')" />
 <x-backpack::menu-item title="Blogs" icon="la la-newspaper nav-icon" :link="backpack_url('blog')" />
+<x-backpack::menu-item title="Contacts" icon="la la-envelope nav-icon" :link="backpack_url('contact')" />

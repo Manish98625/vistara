@@ -11,6 +11,13 @@ class Contact extends Model
 
     use CrudTrait;
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = ['id'];
     protected $fillable = [
         'name',
         'email',
