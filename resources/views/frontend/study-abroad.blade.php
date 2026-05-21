@@ -28,7 +28,7 @@
                         <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Safe and Welcoming Environment</li>
                     </ul>
                     <div class="destination-buttons">
-                        <a href="{{ route('study.show', $country->id) }}" class="btn btn-outline">Learn More</a>
+                        <a href="{{ route('study.show', $country->id) }}" class="btn btn-outline" aria-label="Learn more about studying in {{ $country->name }}">Learn More</a>
                         <a href="{{ route('contact') }}" class="btn btn-primary">Apply Now</a>
                     </div>
                 </div>

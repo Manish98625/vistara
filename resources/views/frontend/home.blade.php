@@ -91,7 +91,7 @@
                             {{ Str::limit($service->description ?? 'Expert guidance', 120) }}
                         </p>
                         <a href="{{ $service->id == 2 ? route('service.test-preparation') : route('service.show', $service->id) }}"
-                            class="btn btn-primary btn-sm">Learn More</a>
+                            class="btn btn-primary btn-sm" aria-label="Learn more about {{ $service->title }}">Learn More</a>
                     </div>
                 @empty
                     <p style="text-align: center; grid-column: 1 / -1;">No services available yet.</p>

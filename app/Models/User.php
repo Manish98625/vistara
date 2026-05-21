@@ -27,7 +27,6 @@ class User extends Authenticatable
         'education_level',
         'field_of_study',
         'profile_image',
-        'role',
         'password',
     ];
 

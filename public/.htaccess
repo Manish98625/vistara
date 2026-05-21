@@ -5,9 +5,9 @@
 
     RewriteEngine On
 
-    # Force HTTPS (uncomment in production)
-    # RewriteCond %{HTTPS} off
-    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -47,8 +47,8 @@
     # Permissions policy (restrict browser features)
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 
-    # HSTS (uncomment in production after HTTPS is confirmed working)
-    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # HSTS (max-age 1 year, include subdomains)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
 # -------------------------------------------

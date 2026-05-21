@@ -28,7 +28,7 @@
                         <p style="color: var(--text-muted); flex-grow: 1; margin-bottom: 20px;">
                             {{ isset($service->short_description) && $service->short_description ? $service->short_description : substr($service->description, 0, 100) . '...' }}
                         </p>
-                        <a href="{{ route('service.show', $service->id) }}" class="btn btn-outline btn-sm">Learn More</a>
+                        <a href="{{ route('service.show', $service->id) }}" class="btn btn-outline btn-sm" aria-label="Learn more about {{ $service->title }}">Learn More</a>
                     </div>
                 @empty
                     <p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted);">No services available at
