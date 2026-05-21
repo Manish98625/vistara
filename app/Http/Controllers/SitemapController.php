@@ -51,9 +51,9 @@ class SitemapController extends Controller
         }
 
         // Dynamic: Services
-        $services = Services::get(['slug', 'updated_at']);
+        $services = Services::get(['id', 'updated_at']);
         foreach ($services as $service) {
-            $urls[] = $this->url('/services/' . $service->slug, 'monthly', '0.6', $service->updated_at);
+            $urls[] = $this->url('/services/' . $service->id, 'monthly', '0.6', $service->updated_at);
         }
 
         $xml = $this->buildXml($urls);
