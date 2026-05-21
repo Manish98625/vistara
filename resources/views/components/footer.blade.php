@@ -65,9 +65,9 @@
             <!-- 5. Contact & Newsletter -->
             <div class="footer-col footer-contact">
                 <h4>Contact Info</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Global Plaza, New Baneshwor, Kathmandu</p>
-                <p><i class="fas fa-phone-alt"></i> +977 1 4445556</p>
-                <p><i class="fas fa-envelope"></i> info@vistara.edu.np</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ward No. 31, Baneshwor,Kathmandu Metropolitan City, Kathmandu</p>
+                <p><i class="fas fa-phone-alt"></i> +977 9712082870</p>
+                <p><i class="fas fa-envelope"></i> vistaraedu@gmail.com</p>
 
                 <h4 style="margin-top: 30px;">Newsletter</h4>
                 <p class="newsletter-text">Get updates about study abroad opportunities, courses, and scholarship news.</p>
