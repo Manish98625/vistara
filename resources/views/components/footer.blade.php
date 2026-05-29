@@ -5,7 +5,7 @@
             <!-- 1. Company -->
             <div class="footer-col">
                 <a href="{{ route('home') }}" class="logo" style="margin-bottom: 20px; display: block;">
-                    <img src="/assets/brand/vistara-logo-white.svg" alt="Vistara Logo" style="height: 60px; width: auto;">
+                    <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education" width="30" height="30">
                 </a>
                 <p style="color: #999; font-size: 0.9rem;">Vistara Education Pvt. Ltd. - Nepal's leading education
                     consultancy, guiding students toward their global academic dreams with integrity and expertise.</p>
@@ -93,7 +93,13 @@
                 <a href="{{ route('terms') }}">Terms & Conditions</a>
                 <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
             </div>
+            <div class="developer">
+                Developed by 
+                <a href="https://manish-thakur.xyz" target="_blank" rel="noopener" 
+                   style="color: #ffffff; text-decoration: none; font-weight: 600; transition: 0.3s;">
+                   Manish Thakur
+                </a>
+            </div>
         </div>
-    </div>
 </footer>
 

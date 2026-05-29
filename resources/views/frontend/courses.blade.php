@@ -36,7 +36,7 @@
                         style="cursor: pointer; text-decoration: none; display: flex; flex-direction: column; transition: var(--transition);">
                         <img src="{{ asset('/uploads/' . $course->image) }}"
                             alt="{{ $course->title }}"
-                            style="width: 100%; height: 100%; object-fit: cover;">
+                            width="400" height="300" style="width: 100%; height: 100%; object-fit: cover;">
                         <div class="dest-overlay" style="background: linear-gradient(to top, rgba(165, 0, 0, 0.95), rgba(165, 0, 0, 0.4)); padding: clamp(20px, 5vw, 40px);">
                             <h3 style="margin-bottom: 10px; font-size: clamp(1.2rem, 3vw, 1.6rem);">{{ $course->title }}</h3>
                             <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); opacity: 0.95; margin-bottom: 15px; line-height: 1.5;">
@@ -69,27 +69,27 @@
                     </h2>
                     <div style="display: grid; gap: 25px;">
                         <div>
-                            <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
                                 <i class="fas fa-globe" style="margin-right: 10px;"></i>Global Recognition
-                            </h4>
+                            </h3>
                             <p style="color: var(--text-muted); margin: 0;">Degrees recognized worldwide with excellent employment prospects</p>
                         </div>
                         <div>
-                            <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
                                 <i class="fas fa-chart-line" style="margin-right: 10px;"></i>Career Growth
-                            </h4>
+                            </h3>
                             <p style="color: var(--text-muted); margin: 0;">Programs designed for high-demand fields with strong salary potential</p>
                         </div>
                         <div>
-                            <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
                                 <i class="fas fa-passport" style="margin-right: 10px;"></i>PR Pathways
-                            </h4>
+                            </h3>
                             <p style="color: var(--text-muted); margin: 0;">Clear routes to permanent residency in Australia, Canada, UK, and USA</p>
                         </div>
                         <div>
-                            <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">
                                 <i class="fas fa-handshake" style="margin-right: 10px;"></i>Expert Guidance
-                            </h4>
+                            </h3>
                             <p style="color: var(--text-muted); margin: 0;">Personalized counseling from start to finish—application to visa approval</p>
                         </div>
                     </div>
@@ -100,8 +100,8 @@
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1523432379-f42624a11fcc?auto=format&fit=crop&q=80&w=500"
                         alt="Study Abroad"
-                        loading="lazy"
-                        style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        loading="lazy" width="500" height="333"
+                        style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>

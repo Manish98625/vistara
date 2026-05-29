@@ -15,7 +15,7 @@
                         style="padding: 0; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column;">
                         @if ($blog->featured_image)
                             <img src="{{ $blog->featured_image }}" alt="{{ $blog->title }}"
-                                style="width: 100%; height: 200px; object-fit: cover;">
+                                width="400" height="200" style="width: 100%; height: 200px; object-fit: cover;">
                         @else
                             <div
                                 style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary));">
@@ -32,7 +32,7 @@
                                 <small
                                     style="color: #999;">{{ $blog->published_at?->format('M d, Y') ?? 'Recently published' }}</small>
                                 <a href="{{ route('blog.show', $blog->slug) }}"
-                                    style="color: var(--primary); text-decoration: none; font-weight: 600;">Read More →</a>
+                                    style="color: var(--primary); text-decoration: none; font-weight: 600;">Read {{ Str::limit($blog->title, 30) }} →</a>
                             </div>
                         </div>
                     </article>

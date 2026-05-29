@@ -4,12 +4,11 @@
 @section('meta_description', Str::limit($course->description ?? '', 160))
 @section('canonical', url()->current())
 @section('content')
-    {{-- @foreach ($courseDetails as $course) --}}
     <section class="section page-header-padding">
         <div class="container course-detail-grid">
             <div class="course-details">
-                <img src="{{ asset('uploads/' . $course->image) }}" alt="{{ $course->title }}" loading="lazy"
-                    style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 15px; margin-bottom: 30px;">
+                <img src="{{ asset('uploads/' . $course->image) }}" alt="{{ $course->title }}" loading="lazy" width="800" height="450"
+                    style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 15px; margin-bottom: 30px;">
                 <h1 style="margin-bottom: 20px;">{{ $course->title }}</h1>
                 <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px;">{{ $course->description }}
                 </p>
@@ -60,8 +59,6 @@
             </div>
         </div>
     </section>
-    {{-- @endforeach --}}
 
-   
 @endsection
 

@@ -17,7 +17,7 @@
         @foreach($countries  as $country)
               <div class="destinations-grid">
                 <div class="reveal">
-                    <img src="{{ asset('/uploads/' . $country->image) }}" alt="{{ $country->title }}" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <img src="{{ asset('/uploads/' . $country->image) }}" alt="{{ $country->title }}" width="500" height="333" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 </div>
                 <div class="reveal">
                     <h2 class="gradient-text">Study in {{ $country->title }}</h2>
@@ -28,7 +28,7 @@
                         <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Safe and Welcoming Environment</li>
                     </ul>
                     <div class="destination-buttons">
-                        <a href="{{ route('study.show', $country->id) }}" class="btn btn-outline" aria-label="Learn more about studying in {{ $country->name }}">Learn More</a>
+                        <a href="{{ route('study.show', $country->id) }}" class="btn btn-outline">View {{ $country->name }} Details</a>
                         <a href="{{ route('contact') }}" class="btn btn-primary">Apply Now</a>
                     </div>
                 </div>

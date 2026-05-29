@@ -35,7 +35,12 @@
 
                 <div style="margin-bottom: 12px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 500;">Password</label>
-                    <input type="password" name="password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="login-password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        <button type="button" class="password-toggle-btn" data-target="login-password" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div style="text-align: right; margin-bottom: 22px;">

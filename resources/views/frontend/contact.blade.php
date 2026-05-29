@@ -19,7 +19,7 @@
                         <a href="#contact-form" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Send Inquiry
                         </a>
-                        <a href="tel:+97714445556" class="btn btn-outline contact-hero-call">
+                        <a href="tel:+9779712082870" class="btn btn-outline contact-hero-call">
                             <i class="fas fa-phone-alt"></i> Call Now
                         </a>
                     </div>
@@ -49,21 +49,21 @@
     <section class="contact-quick-section">
         <div class="container">
             <div class="contact-quick-grid">
-                <a href="tel:+97714445556" class="contact-quick-card reveal">
+                <a href="tel:+9779712082870" class="contact-quick-card reveal">
                     <span><i class="fas fa-phone-alt"></i></span>
                     <div>
                         <h3>Call Us</h3>
-                        <p>+977 1 4445556</p>
+                        <p>+977 9712082870</p>
                     </div>
                 </a>
-                <a href="mailto:info@vistara.edu.np" class="contact-quick-card reveal" style="transition-delay: 0.08s;">
+                <a href="mailto:vistaraedu@gmail.com" class="contact-quick-card reveal" style="transition-delay: 0.08s;">
                     <span><i class="fas fa-envelope"></i></span>
                     <div>
                         <h3>Email Us</h3>
-                        <p>info@vistara.edu.np</p>
+                        <p>vistaraedu@gmail.com</p>
                     </div>
                 </a>
-                <a href="https://wa.me/9779801234568" class="contact-quick-card reveal" style="transition-delay: 0.16s;">
+                <a href="https://wa.me/9779712082870" class="contact-quick-card reveal" style="transition-delay: 0.16s;">
                     <span><i class="fab fa-whatsapp"></i></span>
                     <div>
                         <h3>WhatsApp</h3>
@@ -159,7 +159,7 @@
                     <div class="contact-info-card contact-info-gradient">
                         <span class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></span>
                         <h3>Visit Our Office</h3>
-                        <p>123 Global Plaza, New Baneshwor, Kathmandu, Nepal</p>
+                        <p>Ward No. 31, Baneshwor, Kathmandu Metropolitan City, Kathmandu</p>
                     </div>
 
                     <div class="contact-info-card">
@@ -215,7 +215,7 @@
                     <span>Ready to begin?</span>
                     <h2>Book your free study abroad counselling session today.</h2>
                 </div>
-                <a href="tel:+97714445556" class="btn btn-primary">
+                <a href="tel:+9779712082870" class="btn btn-primary">
                     <i class="fas fa-calendar-check"></i> Book Appointment
                 </a>
             </div>
@@ -233,11 +233,11 @@
     "mainEntity": {
         "@type": "EducationalOrganization",
         "name": "Vistara Education Pvt. Ltd.",
-        "telephone": "+977 1 4445556",
-        "email": "info@vistara.edu.np",
+        "telephone": "+977 9712082870",
+        "email": "vistaraedu@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Global Plaza, New Baneshwor",
+            "streetAddress": "Ward No. 31, Baneshwor, Kathmandu Metropolitan City",
             "addressLocality": "Kathmandu",
             "addressCountry": "Nepal"
         },

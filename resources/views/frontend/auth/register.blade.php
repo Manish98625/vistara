@@ -140,13 +140,23 @@
                             
                             <div style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-heading); font-size: 0.9rem;">Password *</label>
-                                <input type="password" name="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;">
+                                <div class="password-wrapper">
+                                    <input type="password" name="password" id="register-password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;">
+                                    <button type="button" class="password-toggle-btn" data-target="register-password" aria-label="Show password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
                                 <small style="color: var(--text-muted); font-size: 0.8rem;">Minimum 8 characters with letters and numbers</small>
                             </div>
                             
                             <div style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--text-heading); font-size: 0.9rem;">Confirm Password *</label>
-                                <input type="password" name="password_confirmation" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;">
+                                <div class="password-wrapper">
+                                    <input type="password" name="password_confirmation" id="register-password-confirmation" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95rem;">
+                                    <button type="button" class="password-toggle-btn" data-target="register-password-confirmation" aria-label="Show password">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         

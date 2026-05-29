@@ -53,7 +53,11 @@ class SitemapController extends Controller
         // Dynamic: Services
         $services = Services::get(['id', 'updated_at']);
         foreach ($services as $service) {
-            $urls[] = $this->url('/services/' . $service->id, 'monthly', '0.6', $service->updated_at);
+            if ($service->id == 2) {
+                $urls[] = $this->url('/test-preparation', 'monthly', '0.6', $service->updated_at);
+            } else {
+                $urls[] = $this->url('/services/' . $service->id, 'monthly', '0.6', $service->updated_at);
+            }
         }
 
         $xml = $this->buildXml($urls);

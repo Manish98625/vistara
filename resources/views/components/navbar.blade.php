@@ -1,7 +1,7 @@
 <nav class="site-navbar scrolled">
     <div class="container nav-container">
         <a href="{{ route('home') }}" class="logo" aria-label="Vistara Education home">
-            <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education">
+            <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education" width="160" height="40">
         </a>
 
         <div class="nav-main">

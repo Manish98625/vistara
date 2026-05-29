@@ -29,7 +29,7 @@
 
                     <div
                         style="margin-top: 30px; padding: 20px; background: rgba(var(--primary-rgb), 0.05); border-left: 4px solid var(--primary); border-radius: 8px;">
-                        <p><strong>{{ $about->description ?? '✓ 500+ students successfully placed' }}</strong> in
+                        <p><strong>{{ optional($about)->description ?? '✓ 500+ students successfully placed' }}</strong> in
                             top-ranking universities across the globe</p>
                         <p style="margin-top: 10px;"><strong>✓ Partnership with 100+ accredited universities</strong>
                             ensuring authentic placements</p>
@@ -40,8 +40,8 @@
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
                         alt="Vistara Education - Guiding Students to Global Universities"
-                        loading="lazy"
-                        style="width: 100%; border-radius: 20px;">
+                        loading="lazy" width="800" height="533"
+                        style="width: 100%; height: auto; border-radius: 20px;">
                 </div>
             </div>
         </div>
@@ -170,44 +170,44 @@
             <div class="grid-responsive mt-50">
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
-                        alt="Why Choose Vistara Education" loading="lazy" style="width: 100%; border-radius: 15px;">
+                        alt="Why Choose Vistara Education" loading="lazy" width="800" height="533" style="width: 100%; height: auto; border-radius: 15px;">
                 </div>
 
                 <div class="reveal">
                     <h3 style="margin-bottom: 20px;">Expertise You Can Trust</h3>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="margin-bottom: 8px;">✓ Certified Education Counselors</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ Certified Education Counselors</h3>
                         <p>Our team comprises certified professionals with in-depth knowledge of international education
                             systems and admission requirements.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="margin-bottom: 8px;">✓ Strong University Partnerships</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ Strong University Partnerships</h3>
                         <p>Direct relationships with 100+ universities ensure authentic placements and often early
                             application deadlines and fee waivers.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="margin-bottom: 8px;">✓ Proven Track Record</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ Proven Track Record</h3>
                         <p>500+ successfully placed students with 98% visa approval rate speaks to our commitment and
                             expertise.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="margin-bottom: 8px;">✓ Customized Solutions</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ Customized Solutions</h3>
                         <p>No two students are alike. We create personalized education pathways based on academic profile,
                             budget, and career goals.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="margin-bottom: 8px;">✓ End-to-End Support</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ End-to-End Support</h3>
                         <p>From university selection and application guidance to visa processing and post-arrival
                             support—we're with you every step.</p>
                     </div>
 
                     <div>
-                        <h4 style="margin-bottom: 8px;">✓ Affordable & Transparent</h4>
+                        <h3 style="margin-bottom: 8px; font-size: 1.1rem;">✓ Affordable & Transparent</h3>
                         <p>Clear pricing, no hidden fees, and flexible consultation packages to suit every budget.</p>
                     </div>
                 </div>
@@ -298,13 +298,13 @@
         "description": "Leading education consultancy in Nepal offering expert counseling for studying abroad.",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Global Plaza, New Baneshwor",
+            "streetAddress": "Ward No. 31, Baneshwor, Kathmandu Metropolitan City",
             "addressLocality": "Kathmandu",
             "addressCountry": "Nepal"
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+977 1 4445556",
+            "telephone": "+977 9712082870",
             "contactType": "customer service"
         }
     }

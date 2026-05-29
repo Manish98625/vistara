@@ -21,7 +21,7 @@
                     <a href="{{route('contact')}}" class="btn btn-primary" style="margin-top: 30px;">Apply for {{ $studyAbroad->title }}</a>
                 </div>
                 <div class="reveal">
-                    <img src="{{asset('/uploads/' . $studyAbroad->image) }}" alt="{{$studyAbroad->title}}" loading="lazy" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
+                    <img src="{{asset('/uploads/' . $studyAbroad->image) }}" alt="{{$studyAbroad->title}}" loading="lazy" width="500" height="333" style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow);">
                 </div>
             </div>
         
@@ -62,7 +62,7 @@
                 <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                     @foreach($universities as $university)
                     <div class="card" style="padding:0; overflow:hidden; border-radius:15px; box-shadow: var(--shadow);">
-                        <img src="{{asset('/uploads/' . $university->image)}}" alt="{{ $university->name }}" loading="lazy" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+                        <img src="{{asset('/uploads/' . $university->image)}}" alt="{{ $university->name }}" loading="lazy" width="400" height="225" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;">
                         <div style="padding: 20px;">
                             <h4 style="margin-bottom: 10px;">{{ $university->name }}</h4>
                             <p style="font-size: 0.9rem; color: var(--text-muted);">{{ $university->location }}</p>

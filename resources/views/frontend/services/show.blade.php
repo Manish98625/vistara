@@ -56,7 +56,7 @@
                     </div>
                     <div class="reveal">
                         <img src="{{ asset('/uploads/' . $discp->image) }}" alt="{{ $discp->short_title }}"
-                            style="width: 100%; border-radius: 20px; box-shadow: var(--shadow);">
+                            width="500" height="333" style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow);">
                     </div>
                 </div>
             </div>
@@ -74,28 +74,28 @@
                         <div
                             style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px;">
                             1</div>
-                        <h4>Initial Assessment</h4>
+                        <h3 style="font-size: 1rem;">Initial Assessment</h3>
                         <p style="color: #666;">We understand your goals, background, and preferences</p>
                     </div>
                     <div style="text-align: center;">
                         <div
                             style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px;">
                             2</div>
-                        <h4>Profile Evaluation</h4>
+                        <h3 style="font-size: 1rem;">Profile Evaluation</h3>
                         <p style="color: #666;">In-depth analysis of your academic profile</p>
                     </div>
                     <div style="text-align: center;">
                         <div
                             style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px;">
                             3</div>
-                        <h4>Recommendations</h4>
+                        <h3 style="font-size: 1rem;">Recommendations</h3>
                         <p style="color: #666;">Customized suggestions for universities and courses</p>
                     </div>
                     <div style="text-align: center;">
                         <div
                             style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 15px;">
                             4</div>
-                        <h4>Ongoing Support</h4>
+                        <h3 style="font-size: 1rem;">Ongoing Support</h3>
                         <p style="color: #666;">Continuous guidance throughout your journey</p>
                     </div>
                 </div>

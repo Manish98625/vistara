@@ -28,12 +28,22 @@
 
                 <div style="margin-bottom: 20px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 500;">New Password</label>
-                    <input type="password" name="password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                    <div class="password-wrapper">
+                        <input type="password" name="password" id="reset-password" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        <button type="button" class="password-toggle-btn" data-target="reset-password" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div style="margin-bottom: 25px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 500;">Confirm New Password</label>
-                    <input type="password" name="password_confirmation" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                    <div class="password-wrapper">
+                        <input type="password" name="password_confirmation" id="reset-password-confirmation" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+                        <button type="button" class="password-toggle-btn" data-target="reset-password-confirmation" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Reset Password</button>

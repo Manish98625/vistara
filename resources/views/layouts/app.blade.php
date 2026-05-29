@@ -33,6 +33,15 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('assets/brand/vistara-favicon.svg') }}">
     <link rel="shortcut icon" type="image/svg+xml" href="{{ asset('assets/brand/vistara-favicon.svg') }}">
 
+    {{-- Preload critical hero/LCP images --}}
+    @yield('preloads')
+
+    {{-- Google Fonts (preconnect + preload) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
+
     {{-- Stylesheets --}}
     @production
     <link rel="preload" href="{{ asset('css/style.min.css') }}" as="style">
@@ -40,7 +49,8 @@
     @else
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @endproduction
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
     @yield('extra_css')
 </head>

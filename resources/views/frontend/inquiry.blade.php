@@ -118,7 +118,7 @@
                         <span class="contact-info-icon"><i class="fab fa-whatsapp"></i></span>
                         <h3>Need urgent help?</h3>
                         <p>Message us on WhatsApp for quick counselling support.</p>
-                        <a href="https://wa.me/9779801234568" class="btn btn-outline inquiry-whatsapp-btn">Chat on WhatsApp</a>
+                        <a href="https://wa.me/9779712082870" class="btn btn-outline inquiry-whatsapp-btn">Chat on WhatsApp</a>
                     </div>
                 </aside>
             </div>

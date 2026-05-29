@@ -8,13 +8,23 @@
 @section('og_description', 'Study abroad with confidence! Vistara Education offers expert counseling, 500+ university partnerships, and 98% visa success rate for Nepali students.')
 @section('og_image', asset('assets/brand/vistara-og-image.jpg'))
 
+@section('preloads')
+    @if($banners->isNotEmpty())
+    <link rel="preload" href="{{ asset('/uploads/' . $banners->first()->image) }}" as="image" fetchpriority="high">
+    @endif
+@endsection
+
 @section('content')
     <!-- Hero Slider -->
     <section class="hero-slider">
 
         @foreach ($banners as $index => $banner)
-            <div class="slide @if ($index === 0) active @endif"
-                style="background-image: url('{{ asset('/uploads/' . $banner->image) }}');">
+            <div class="slide @if ($index === 0) active @endif">
+                <img src="{{ asset('/uploads/' . $banner->image) }}"
+                     alt="{{ $banner->heading_text }}"
+                     @if($index === 0) fetchpriority="high" @endif
+                     sizes="(max-width: 768px) 100vw, 100vw"
+                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
                 <div class="container">
                     <div class="hero-content">
                         <h1 class="reveal">{{ $banner->heading_text }}</h1>
@@ -39,27 +49,27 @@
                         Vistara Education?</h2>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ 500+ Students Placed
-                        </h4>
+                        <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ 500+ Students Placed
+                        </h3>
                         <p style="color: var(--text-muted); margin: 0;">In top universities worldwide with 98% visa success
                             rate.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Expert Guidance</h4>
+                        <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Expert Guidance</h3>
                         <p style="color: var(--text-muted); margin: 0;">Certified counselors providing personalized
                             counseling from day one.</p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
-                        <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Complete Support</h4>
+                        <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Complete Support</h3>
                         <p style="color: var(--text-muted); margin: 0;">University selection, visa processing, test prep,
                             scholarships—everything covered.</p>
                     </div>
 
                     <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Transparent & Honest
-                        </h4>
+                        <h3 style="color: var(--primary); margin-bottom: 8px; font-size: 1.1rem;">✓ Transparent & Honest
+                        </h3>
                         <p style="color: var(--text-muted); margin: 0;">No hidden fees. No false promises. Just real
                             results.</p>
                     </div>
@@ -68,8 +78,8 @@
                 </div>
                 <div class="reveal">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=500"
-                        alt="Vistara Education Team" loading="lazy"
-                        style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        alt="Vistara Education Team" loading="lazy" width="500" height="333"
+                        style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
@@ -91,7 +101,7 @@
                             {{ Str::limit($service->description ?? 'Expert guidance', 120) }}
                         </p>
                         <a href="{{ $service->id == 2 ? route('service.test-preparation') : route('service.show', $service->id) }}"
-                            class="btn btn-primary btn-sm" aria-label="Learn more about {{ $service->title }}">Learn More</a>
+                            class="btn btn-primary btn-sm">Explore {{ $service->title }}</a>
                     </div>
                 @empty
                     <p style="text-align: center; grid-column: 1 / -1;">No services available yet.</p>
@@ -112,7 +122,7 @@
                 <a href="{{ route('study.show', $course->id) }}" class="dest-card reveal"
                     style="cursor: pointer; text-decoration: none;">
                     <img src="{{'/uploads/'.$course->image}}"
-                        alt="{{ $course->title }}" loading="lazy">
+                        alt="{{ $course->title }}" loading="lazy" width="400" height="250">
                     <div class="dest-overlay">
                         <h3>{{ $course->title }}</h3>
                         <p>{{ $course->description }}</p>
@@ -133,7 +143,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         1</div>
-                    <h4 style="margin-bottom: 8px;">Free Counseling</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">Free Counseling</h3>
                     <p style="color: #666; font-size: 0.9rem;">Profile analysis & guidance</p>
                 </div>
 
@@ -141,7 +151,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         2</div>
-                    <h4 style="margin-bottom: 8px;">University Selection</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">University Selection</h3>
                     <p style="color: #666; font-size: 0.9rem;">Matching your preferences</p>
                 </div>
 
@@ -149,7 +159,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         3</div>
-                    <h4 style="margin-bottom: 8px;">Documentation</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">Documentation</h3>
                     <p style="color: #666; font-size: 0.9rem;">Complete application prep</p>
                 </div>
 
@@ -157,7 +167,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         4</div>
-                    <h4 style="margin-bottom: 8px;">SOP/LOR Guidance</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">SOP/LOR Guidance</h3>
                     <p style="color: #666; font-size: 0.9rem;">Expert writing support</p>
                 </div>
 
@@ -165,7 +175,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         5</div>
-                    <h4 style="margin-bottom: 8px;">Visa Processing</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">Visa Processing</h3>
                     <p style="color: #666; font-size: 0.9rem;">Interview & approval</p>
                 </div>
 
@@ -173,7 +183,7 @@
                     <div
                         style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), #0fa3d0); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold; margin: 0 auto 15px; box-shadow: 0 8px 20px rgba(13,138,188,0.25);">
                         6</div>
-                    <h4 style="margin-bottom: 8px;">Pre-Departure</h4>
+                    <h3 style="margin-bottom: 8px; font-size: 1rem;">Pre-Departure</h3>
                     <p style="color: #666; font-size: 0.9rem;">Orientation & support</p>
                 </div>
 
@@ -445,7 +455,7 @@
                     <article class="card glass reveal" style="padding: 0; border-radius: 15px; overflow: hidden;">
                         @if ($blog->featured_image)
                             <img src="{{ $blog->featured_image }}" alt="{{ $blog->title }}"
-                                style="width: 100%; height: 200px; object-fit: cover;">
+                                width="400" height="200" style="width: 100%; height: 200px; object-fit: cover;">
                         @else
                             <div
                                 style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary));">

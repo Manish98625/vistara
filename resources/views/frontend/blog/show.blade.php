@@ -7,7 +7,7 @@
 <article class="section page-header-padding" style="max-width: 900px; margin: 0 auto;">
     <div class="reveal">
         @if($blog->featured_image)
-            <img src="{{ $blog->featured_image }}" alt="{{ $blog->title }}" style="width: 100%; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 40px; max-height: 400px; object-fit: cover;">
+            <img src="{{ $blog->featured_image }}" alt="{{ $blog->title }}" width="900" height="400" style="width: 100%; height: auto; max-height: 400px; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 40px; object-fit: cover;">
         @else
             <div style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 20px; margin-bottom: 40px;"></div>
         @endif
@@ -47,7 +47,7 @@
                 @foreach($relatedBlogs as $relatedBlog)
                     <article class="card glass reveal" style="padding: 0; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column;">
                         @if($relatedBlog->featured_image)
-                            <img src="{{ $relatedBlog->featured_image }}" alt="{{ $relatedBlog->title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                            <img src="{{ $relatedBlog->featured_image }}" alt="{{ $relatedBlog->title }}" width="400" height="200" style="width: 100%; height: 200px; object-fit: cover;">
                         @else
                             <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
                         @endif
@@ -56,7 +56,7 @@
                             <p style="font-size: 0.9rem; color: #666; flex-grow: 1;">{{ Str::limit($relatedBlog->excerpt ?? $relatedBlog->content, 100) }}</p>
                             <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
                                 <small style="color: #999;">{{ $relatedBlog->published_at?->format('M d, Y') }}</small><br>
-                                <a href="{{ route('blog.show', $relatedBlog->slug) }}" style="color: var(--primary); text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block;">Read More →</a>
+                                <a href="{{ route('blog.show', $relatedBlog->slug) }}" style="color: var(--primary); text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block;">Read Article →</a>
                             </div>
                         </div>
                     </article>

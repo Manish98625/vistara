@@ -4,7 +4,7 @@
     Typography: Playfair Display (Serif) & Poppins (Sans-serif)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Typography: Playfair Display (Serif) & Poppins (Sans-serif) - loaded via HTML link */
 
 :root {
     --primary: #A50000;
@@ -486,8 +486,6 @@ button.back-to-top:focus-visible {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
 }
@@ -4046,4 +4044,41 @@ img {
 .breadcrumb-item.active {
     color: var(--text-dark);
     font-weight: 600;
+}
+
+/* =============================================
+   Password Toggle
+   ============================================= */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 45px !important;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.password-toggle-btn:hover {
+    color: var(--primary);
+}
+
+.password-toggle-btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }

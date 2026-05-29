@@ -3,13 +3,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
     const nav = document.querySelector('nav');
+    let navTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
+        if (!navTicking) {
+            requestAnimationFrame(() => {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+                navTicking = false;
+            });
+            navTicking = true;
         }
-    });
+    }, { passive: true });
 
     // Active Link Highlighting
     const currentPath = window.location.pathname;
@@ -94,11 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Back to Top Button
     const backToTop = document.querySelector('.back-to-top');
     if (backToTop) {
+        let bttTicking = false;
         const toggleBackToTop = () => {
-            if (window.scrollY > 400) {
-                backToTop.classList.add('is-visible');
-            } else {
-                backToTop.classList.remove('is-visible');
+            if (!bttTicking) {
+                requestAnimationFrame(() => {
+                    backToTop.classList.toggle('is-visible', window.scrollY > 400);
+                    bttTicking = false;
+                });
+                bttTicking = true;
             }
         };
         toggleBackToTop();
@@ -167,4 +173,26 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => cookieBanner.setAttribute('hidden', ''), 400);
         });
     }
+
+    // Password Toggle Functionality
+    const passwordToggles = document.querySelectorAll('.password-toggle-btn');
+    passwordToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const targetId = toggle.getAttribute('data-target');
+            const passwordInput = document.getElementById(targetId);
+            const icon = toggle.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+                toggle.setAttribute('aria-label', 'Hide password');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+                toggle.setAttribute('aria-label', 'Show password');
+            }
+        });
+    });
 });

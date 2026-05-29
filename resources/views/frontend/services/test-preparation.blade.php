@@ -55,7 +55,7 @@
                                 One-on-one speaking practice
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block;" aria-label="Learn more about IELTS Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block;">Enroll in IELTS Prep</a>
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@
                                 Integrated skills coaching
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #7B68EE; color: white;" aria-label="Learn more about PTE Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #7B68EE; color: white;">Enroll in PTE Prep</a>
                     </div>
                 </div>
 
@@ -111,7 +111,7 @@
                                 Comprehensive section training
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #FF6B6B; color: white;" aria-label="Learn more about TOEFL Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #FF6B6B; color: white;">Enroll in TOEFL Prep</a>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                                 Score improvement guarantee
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #4ECDC4; color: white;" aria-label="Learn more about SAT Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #4ECDC4; color: white;">Enroll in SAT Prep</a>
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@
                                 Practice tests & solutions
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #95E1D3; color: white;" aria-label="Learn more about GRE Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #95E1D3; color: white;">Enroll in GRE Prep</a>
                     </div>
                 </div>
 
@@ -195,7 +195,7 @@
                                 Personalized learning path
                             </li>
                         </ul>
-                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #FFA07A; color: white;" aria-label="Learn more about GMAT Preparation">Learn More</a>
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-block" style="width: 100%; text-align: center; padding: 10px; border-radius: 8px; display: block; background: #FFA07A; color: white;">Enroll in GMAT Prep</a>
                     </div>
                 </div>
             </div>
@@ -348,7 +348,7 @@
                 </div>
 
                 <div class="reveal">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=500" alt="Test Preparation Classes" loading="lazy" style="width: 100%; border-radius: 15px; box-shadow: var(--shadow);">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=500" alt="Test Preparation Classes" loading="lazy" width="500" height="333" style="width: 100%; height: auto; border-radius: 15px; box-shadow: var(--shadow);">
                 </div>
             </div>
         </div>
