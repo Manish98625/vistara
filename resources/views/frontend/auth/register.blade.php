@@ -11,7 +11,7 @@
             <!-- Left Side - Welcome Content -->
             <div class="reveal registration-welcome">
                 <div style="margin-bottom: 30px;">
-                    <img src="{{ asset('assets/brand/vistara-logo-custom.svg') }}" alt="Vistara Education Logo" style="height: 80px; width: auto; margin-bottom: 20px;">
+                    <img src="{{ asset('assets/brand/vistara-logo-main.svg') }}" alt="Vistara Education Logo" style="height: 80px; width: auto; margin-bottom: 20px;">
                 </div>
                 
                 <h1 style="font-size: 2.5rem; margin-bottom: 20px; font-family: 'Playfair Display', serif; color: var(--primary);">
